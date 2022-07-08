@@ -21,6 +21,9 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
+/**
+
 module.exports = {
   solidity: { 
     version: "0.8.4"
@@ -34,4 +37,20 @@ networks:{
 }
 
 };
+**/
 
+
+
+
+
+module.exports = {
+  solidity: "0.8.4",
+  defaultNetwork: "rinkeby",
+  networks: {
+    hardhat: {},
+    rinkeby: {
+      url: endpoint,
+      accounts: [`0x${privatekey}`]
+    }
+  }
+  }
